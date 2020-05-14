@@ -1,0 +1,29 @@
+{
+  "name": "murataygun/user-provider-facebook",
+  "description": "Facebook extension for UserProvider library",
+  "keywords": [
+    "laravel",
+    "user provider",
+    "oauth",
+    "social login"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Murat AYGÜN",
+      "email": "info@murataygun.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "murataygun\\UserProviderFacebook\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "murataygun\\UserProviderFacebook\\UserProviderFacebookServiceProvider"
+      ]
+    }
+  }
+}
