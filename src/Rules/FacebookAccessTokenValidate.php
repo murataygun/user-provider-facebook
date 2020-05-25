@@ -14,6 +14,7 @@ use murataygun\UserProviderFacebook\Util\FacebookUtil;
 
 /**
  * Class FacebookAccessTokenValidate
+ * @author Murat AYGÜN <info@murataygun.com>
  * @package murataygun\UserProviderFacebook\Rules
  */
 class FacebookAccessTokenValidate implements Rule
@@ -22,9 +23,17 @@ class FacebookAccessTokenValidate implements Rule
      * @var null
      */
     private $scopes = null;
+    /**
+     * @var mixed
+     */
     private $configFacebook;
-    private $config;
+    /**
+     * @var mixed
+     */
     private $client_id;
+    /**
+     * @var mixed
+     */
     private $client_secret;
 
     /**
@@ -37,15 +46,13 @@ class FacebookAccessTokenValidate implements Rule
 
         $this->scopes = $scopes;
         $this->configFacebook = app()['config']['user-provider-facebook'];
-        $this->config = app()['config']['user-provider'];
 
-        if (!isset($this->config['facebook'])) {
-            throw new Exception('Config array not found in: user-provider.facebook', 500);
+        if (!isset($this->configFacebook['facebook'])) {
+            throw new Exception('Config array not found in: user-provider-facebook.facebook', 500);
         }
-        $this->config = $this->config['facebook'];
 
-        $this->client_id = $this->config['client_id'];
-        $this->client_secret = $this->config['client_secret'];
+        $this->client_id = $this->configFacebook['facebook']['client_id'];
+        $this->client_secret = $this->configFacebook['facebook']['client_secret'];
     }
 
     /**
