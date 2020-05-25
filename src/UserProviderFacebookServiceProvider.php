@@ -42,4 +42,12 @@ class UserProviderFacebookServiceProvider extends AbstractUserProviderServicePro
 
         return $grant;
     }
+
+    /**
+     * @return string
+     */
+    public function getIdentifier()
+    {
+        return 'facebook';
+    }
 }
