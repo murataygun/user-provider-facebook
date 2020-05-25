@@ -27,6 +27,6 @@
     }
   },
   "require": {
-    "murataygun/user-provider": "1.*"
+    "murataygun/user-provider": "^1.0"
   }
 }
